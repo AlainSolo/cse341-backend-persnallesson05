@@ -1,0 +1,27 @@
+[{
+    "name": "Joe",
+    "familyName": "Biden",
+    "rang": "46",
+    "party": "Democrat",
+    "electedYear": "2021",
+    "hobbies": "swimming"
+},
+
+{
+    "name": "Trump",
+    "familyName": "Donald",
+    "rang": "45",
+    "party": "Republican",
+    "electedYear": "2017",
+    "hobbies": "Golf"
+},
+
+{
+    "name": "Obama",
+    "familyName": "Barack",
+    "rang": "44",
+    "party": "Democrat",
+    "electedYear": "2009",
+    "hobbies": "Basket"
+}
+]
