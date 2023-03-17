@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "President API",
+    "description": "Apostle API",
     "version": "1.0.0"
   },
   "host": "localhost:8080",
@@ -18,7 +18,7 @@
         "responses": {}
       }
     },
-    "/president/": {
+    "/apostle/": {
       "get": {
         "description": "",
         "parameters": [],
@@ -63,12 +63,12 @@
         }
       }
     },
-    "/president/{presidentId}": {
+    "/apostle/{apostleId}": {
       "get": {
         "description": "",
         "parameters": [
           {
-            "name": "presidentId",
+            "name": "apostleId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -87,7 +87,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "presidentId",
+            "name": "apostleId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -112,7 +112,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "presidentId",
+            "name": "apostleId",
             "in": "path",
             "required": true,
             "type": "string"

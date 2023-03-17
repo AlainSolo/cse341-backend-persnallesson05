@@ -1,15 +1,15 @@
 const db = require('../models');
-const President = db.president;
+const Apostle = db.apostle;
 
 exports.create = (req, res) => {
   // Validate request
- if (!req.body.username || !req.body.password) {
-    res.status(400).send({ message: 'Content can not be empty!' });
-   return;
-  }
+//  if (!req.body.username || !req.body.password) {
+//     res.status(400).send({ message: 'Content can not be empty!' });
+//    return;
+//   }
 
-  const user = new President(req.body);
-  user
+  const apostle = new Apostle(req.body);
+  apostle
     .save()
     .then((data) => {
       console.log(data);
@@ -23,7 +23,7 @@ exports.create = (req, res) => {
 };
 
 exports.getAll = (req, res) => {
-  President.find({})
+  Apostle.find({})
     .then((data) => {
       res.send(data);
     })
@@ -34,9 +34,9 @@ exports.getAll = (req, res) => {
     });
 };
 
-exports.getPresident = (req, res) => {
+exports.getApostle = (req, res) => {
   const presidentId = req.params.presidentId;
-  President.find({ presidentId: presidentId })
+  Apostle.find({ apostleId: apostleId })
     .then((data) => {
       res.send(data);
     })
@@ -47,45 +47,45 @@ exports.getPresident = (req, res) => {
     });
 };
 
- // Update a President by the id in the request
- exports.updatePresident = (req, res) => {
+ // Update an Apostle by the id in the request
+ exports.updateApostle = (req, res) => {
   if (!req.body) {     
     return res.status(400).send({     
        message: 'Data to update can not be empty!',
     });
    }
 
-  const presidentId = req.params.presidentId;
+  const apostleId = req.params.apostleId;
 
-  President.findByIdAndUpdate(presidentId, req.body, { useFindAndModify: false })     
+  Apostle.findByIdAndUpdate(apostleId, req.body, { useFindAndModify: false })     
   .then((data) => {
       if (!data) {
         res.status(404).send({          
-          message: `Cannot update president with id=${presidentId}. Maybe President was not found!`,     
+          message: `Cannot update Apostlewith id=${apostleId}. Maybe Apostle was not found!`,     
          })      
-        } else res.send({ message: 'President was updated successfully.' });
+        } else res.send({ message: 'Apostle was updated successfully.' });
     })    .catch((err) => {      
       res.status(500).send({        
-        message: 'Error updating President with id=' + presidentId,      
-    });    
+        message: 'Error updating Apostle with id=' + apostleId,
+       });    
   }); 
 };
 
 
 
 
-exports.deletePresident = (req, res) => {
-  const presidentId = req.params.presidentId;
-   President.findByIdAndRemove(presidentId)
+exports.deleteApostle = (req, res) => {
+  const apostleId = req.params.apostletId;
+  Apostle.findByIdAndRemove(apostleId)
     .then((data) => {
        if (!data) {
                  res.status(404).send({
-          message: `Cannot delete Presindt with id=${id}. Maybe Temple was not found!`,
+          message: `Cannot delete Apsostle with id=${id}. Maybe Apostle was not found!`,
          });       } else {
         res.send({
-          message: 'President was deleted successfully!',
+          message: 'Apostle was deleted successfully!',
         });       }     })     .catch((err) => {       res.status(500).send({
-         message: 'Could not delete President with id=' + id,
+         message: 'Could not delete Apostle with id=' + id,
       });
      });
  };

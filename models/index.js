@@ -7,6 +7,6 @@ const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.theme = require('./theme.js')(mongoose);
-db.president = require('./president.js')(mongoose);
+db.apostle = require('./apostle.js')(mongoose);
 
 module.exports = db;
